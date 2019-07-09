@@ -105,7 +105,14 @@ class Ui_mainWindow(object):
 
         self.retranslateUi(mainWindow)
         self.no_btn.clicked.connect(mainWindow.set_word_no)
+<<<<<<< HEAD
         self.pushButton.clicked.connect(mainWindow.selectTxtFilePath)
+=======
+        self.soso_btn.clicked.connect(mainWindow.set_word_soso)
+        self.yes_btn.clicked.connect(mainWindow.set_word_yes)
+        self.up_btn.clicked.connect(mainWindow.up_word)
+        self.save_btn.clicked.connect(mainWindow.save_word)
+>>>>>>> 141cfbfea2ec11e7ac235c91c67b73117fbdb420
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
     def retranslateUi(self, mainWindow):
