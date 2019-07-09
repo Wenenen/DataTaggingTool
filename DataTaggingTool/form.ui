@@ -225,8 +225,76 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>soso_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>set_word_soso()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>255</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yes_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>set_word_yes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>up_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>up_word()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>425</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>-16</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>save_word()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>583</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>set_word_no()</slot>
+  <slot>set_word_soso()</slot>
+  <slot>set_word_yes()</slot>
+  <slot>up_word()</slot>
+  <slot>save_word()</slot>
  </slots>
 </ui>
