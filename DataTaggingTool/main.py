@@ -17,8 +17,8 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
         self.index = 0
         self.is_save = False
         self.yes = 1
-        self.soso = 2
-        self.no = 3
+        self.soso = 0
+        self.no = -1
 
     # 在label空间上显示词
     def show_word(self):
