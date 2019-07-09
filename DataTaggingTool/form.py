@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'form.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -11,11 +11,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(800, 600)
+        mainWindow.resize(793, 777)
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 380, 704, 169))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 440, 704, 232))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -39,19 +39,19 @@ class Ui_mainWindow(object):
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
         self.cause_name = QtWidgets.QLabel(self.centralwidget)
-        self.cause_name.setGeometry(QtCore.QRect(40, 70, 301, 71))
+        self.cause_name.setGeometry(QtCore.QRect(40, 70, 491, 71))
         font = QtGui.QFont()
         font.setPointSize(18)
         self.cause_name.setFont(font)
         self.cause_name.setObjectName("cause_name")
         self.keyword = QtWidgets.QLabel(self.centralwidget)
-        self.keyword.setGeometry(QtCore.QRect(280, 170, 241, 51))
+        self.keyword.setGeometry(QtCore.QRect(280, 240, 241, 51))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.keyword.setFont(font)
         self.keyword.setObjectName("keyword")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(560, 70, 201, 61))
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(560, 70, 220, 61))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -69,7 +69,7 @@ class Ui_mainWindow(object):
         self.keyword_cnt.setObjectName("keyword_cnt")
         self.horizontalLayout_2.addWidget(self.keyword_cnt)
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(50, 300, 702, 61))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(50, 340, 702, 85))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -94,9 +94,12 @@ class Ui_mainWindow(object):
         self.no_btn.setFont(font)
         self.no_btn.setObjectName("no_btn")
         self.horizontalLayout.addWidget(self.no_btn)
+        self.backLabel = QtWidgets.QLabel(self.centralwidget)
+        self.backLabel.setGeometry(QtCore.QRect(240, 160, 311, 51))
+        self.backLabel.setObjectName("backLabel")
         mainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(mainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 793, 28))
         self.menubar.setObjectName("menubar")
         mainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(mainWindow)
@@ -105,6 +108,7 @@ class Ui_mainWindow(object):
 
         self.retranslateUi(mainWindow)
         self.no_btn.clicked.connect(mainWindow.set_word_no)
+        self.pushButton.clicked.connect(mainWindow.selectTxtFilePath)
         self.soso_btn.clicked.connect(mainWindow.set_word_soso)
         self.yes_btn.clicked.connect(mainWindow.set_word_yes)
         self.up_btn.clicked.connect(mainWindow.up_word)
@@ -113,15 +117,16 @@ class Ui_mainWindow(object):
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
+        mainWindow.setWindowTitle(_translate("mainWindow", "这是一个数据标注软件"))
         self.up_btn.setText(_translate("mainWindow", "上一个（点错时用）"))
         self.save_btn.setText(_translate("mainWindow", "保存（退出前一定要保存！！！）"))
         self.pushButton.setText(_translate("mainWindow", "选择文件路径"))
         self.cause_name.setText(_translate("mainWindow", "用于显示案由"))
         self.keyword.setText(_translate("mainWindow", "用于显示关键词"))
-        self.label_3.setText(_translate("mainWindow", "数量："))
+        self.label_3.setText(_translate("mainWindow", "序号："))
         self.keyword_cnt.setText(_translate("mainWindow", "TextLabel"))
         self.yes_btn.setText(_translate("mainWindow", "正确"))
         self.soso_btn.setText(_translate("mainWindow", "相似"))
         self.no_btn.setText(_translate("mainWindow", "错误"))
+        self.backLabel.setText(_translate("mainWindow", "上一步操作内容"))
 
