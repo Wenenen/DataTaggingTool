@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'form.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -11,11 +11,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
-        mainWindow.resize(800, 600)
+        mainWindow.resize(794, 702)
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 380, 704, 169))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 380, 704, 232))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -69,7 +69,7 @@ class Ui_mainWindow(object):
         self.keyword_cnt.setObjectName("keyword_cnt")
         self.horizontalLayout_2.addWidget(self.keyword_cnt)
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(50, 300, 702, 61))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(50, 300, 702, 85))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -96,7 +96,7 @@ class Ui_mainWindow(object):
         self.horizontalLayout.addWidget(self.no_btn)
         mainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(mainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 794, 28))
         self.menubar.setObjectName("menubar")
         mainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(mainWindow)
@@ -105,11 +105,12 @@ class Ui_mainWindow(object):
 
         self.retranslateUi(mainWindow)
         self.no_btn.clicked.connect(mainWindow.set_word_no)
+        self.pushButton.clicked.connect(mainWindow.selectTxtFilePath)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("mainWindow", "MainWindow"))
+        mainWindow.setWindowTitle(_translate("mainWindow", "这是一个数据标注软件"))
         self.up_btn.setText(_translate("mainWindow", "上一个（点错时用）"))
         self.save_btn.setText(_translate("mainWindow", "保存（退出前一定要保存！！！）"))
         self.pushButton.setText(_translate("mainWindow", "选择文件路径"))

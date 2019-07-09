@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>794</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>这是一个数据标注软件</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -20,7 +20,7 @@
       <x>50</x>
       <y>380</y>
       <width>704</width>
-      <height>169</height>
+      <height>232</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -140,7 +140,7 @@
       <x>50</x>
       <y>300</y>
       <width>702</width>
-      <height>61</height>
+      <height>85</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -200,8 +200,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>794</width>
+     <height>28</height>
     </rect>
    </property>
   </widget>
@@ -221,12 +221,29 @@
     </hint>
     <hint type="destinationlabel">
      <x>152</x>
-     <y>-5</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>selectTxtFilePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>424</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>-4</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>set_word_no()</slot>
+  <slot>selectTxtFilePath()</slot>
  </slots>
 </ui>
