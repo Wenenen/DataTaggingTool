@@ -19,7 +19,7 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
         self.label_list = []
         self.numToLabel = ["错误", "相似", "正确"]
         self.index = 0
-        self.is_save = False
+        self.is_save = True
         self.yes = 1
         self.soso = 0
         self.no = -1
@@ -38,7 +38,10 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
     def show_word(self):
         if self.index > 0:
             backStr="前一个的标记为\n" \
-                "序号"+str(self.index-1)+"："+self.word_list[self.index-1]+"。  标记为了"+str(self.numToLabel[self.label_list[self.index-1]+1])
+                "序号"+str(self.index-1)+"："+self.word_list[self.index-1]+"   标记为了"+str(self.numToLabel[self.label_list[self.index-1]+1])
+            self.backLabel.setText(backStr)
+        else:
+            backStr = "无前一个"
             self.backLabel.setText(backStr)
         self.keyword_cnt.setText(str(self.index))
         self.keyword.setText(self.word_list[self.index])
@@ -119,12 +122,19 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
 
     def selectTxtFilePath(self):
         # 清空相关变量
-        # self.file_name = None
-        # self.file_path = None
-        # self.word_list.clear()
-        # self.label_list = []
-        # self.is_save = True
-        # self.index = 0
+        if self.is_save is False:
+            reply = QtWidgets.QMessageBox.question(self, '警告', '还未保存，确定重新选文件？',
+                                                   QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.No)
+            if reply == QtWidgets.QMessageBox.Yes:
+                pass
+            else:
+                return
+        self.file_name = None
+        self.file_path = None
+        self.word_list.clear()
+        self.label_list.clear()
+        self.is_save = True
+        self.index = 0
         self.file_path = QFileDialog.getOpenFileName(self, 'Open file', os.getcwd())
         if self.file_path[0]:  # 如果有这个文件
             self.cause_name.setText(os.path.split(self.file_path[0])[1])
@@ -138,24 +148,30 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
                 # 获取label_list
                 self.label_list = [unlabel]*len(self.word_list)
 
-            # 如果已经标注过,那么读取里面的标签
+            # 判断是否已经标注过
             if os.path.exists(self.save_file_name):
                 with open(self.save_file_name, 'r', encoding='utf-8') as save_file:
                     index = 0
                     lines = save_file.readlines()
+                    finish = True
                     for line in lines:
                         line = line.split()
                         label = line[1]
                         # 如果没有标注
                         if unlabel == int(label):
                             self.index = index
+                            finish = False
                             break
                         self.label_list[index] = int(label)
                         index += 1
+                    if finish:
+                        self.index = len(self.word_list) - 1
+
             self.keyword.setText(str(self.word_list[0]))
             self.keyword_cnt.setText("0")
             self.word_list_len = len(self.word_list)
             self.show_word()
+            
         else:
             msg_box = QMessageBox(QMessageBox.Information, "消息提醒", "好像没选数据文件噢")
             msg_box.exec_()
