@@ -6,9 +6,6 @@ from PyQt5.QtWidgets import QFileDialog, QMessageBox, QShortcut
 from PyQt5.QtGui import QKeySequence
 from PyQt5.QtCore import Qt
 
-# 没有标注
-unlabel = -2
-
 class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
     def __init__(self):
         super(mywindow, self).__init__()
@@ -25,6 +22,7 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
         self.relevant_word = 3
         self.error_word = 4
         self.word_list_len = 0
+        self.unlabel = 0
         QShortcut(QKeySequence(Qt.Key_1), self, self.set_word_currency)
         QShortcut(QKeySequence(Qt.Key_2), self, self.set_word_proper)
         QShortcut(QKeySequence(Qt.Key_3), self, self.set_word_relevant)
@@ -156,7 +154,7 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
                     line = line.split()
                     self.word_list.append(line[0])
                 # 获取label_list
-                self.label_list = [unlabel]*len(self.word_list)
+                self.label_list = [self.unlabel]*len(self.word_list)
 
             # 判断是否已经标注过
             if os.path.exists(self.save_file_name):
@@ -168,7 +166,7 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
                         line = line.split()
                         label = line[1]
                         # 如果没有标注
-                        if unlabel == int(label):
+                        if self.unlabel == int(label):
                             self.index = index
                             finish = False
                             break
