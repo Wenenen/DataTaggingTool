@@ -17,16 +17,18 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
         self.save_file_name = ''
         self.word_list = []
         self.label_list = []
-        self.numToLabel = ["错误", "相似", "正确"]
+        self.numToLabel = ["通用词", "专有词", "关联词", "错误词"]
         self.index = 0
         self.is_save = True
-        self.yes = 1
-        self.soso = 0
-        self.no = -1
+        self.currency_word = 1
+        self.proper_word = 2
+        self.relevant_word = 3
+        self.error_word = 4
         self.word_list_len = 0
-        QShortcut(QKeySequence(Qt.Key_1), self, self.set_word_yes)
-        QShortcut(QKeySequence(Qt.Key_2), self, self.set_word_soso)
-        QShortcut(QKeySequence(Qt.Key_3), self, self.set_word_no)
+        QShortcut(QKeySequence(Qt.Key_1), self, self.set_word_currency)
+        QShortcut(QKeySequence(Qt.Key_2), self, self.set_word_proper)
+        QShortcut(QKeySequence(Qt.Key_3), self, self.set_word_relevant)
+        QShortcut(QKeySequence(Qt.Key_4), self, self.set_word_error)
         QShortcut(QKeySequence(Qt.Key_U), self, self.up_word)
         QShortcut(QKeySequence(Qt.Key_S), self, self.save_word)
 
@@ -38,7 +40,7 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
     def show_word(self):
         if self.index > 0:
             backStr="前一个的标记为\n" \
-                "序号"+str(self.index-1)+"："+self.word_list[self.index-1]+"   标记为了"+str(self.numToLabel[self.label_list[self.index-1]+1])
+                "序号"+str(self.index-1)+"："+self.word_list[self.index-1]+"   标记为了"+str(self.numToLabel[self.label_list[self.index-1]-1])
             self.backLabel.setText(backStr)
         else:
             backStr = "无前一个"
@@ -64,28 +66,36 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
         self.is_save = False
 
     # 关键字正确
-    def set_word_yes(self):
+    def set_word_currency(self):
         if self.file_path is None:
             return
-        self.label_list[self.index] = self.yes
+        self.label_list[self.index] = self.currency_word
         self.index_up()
         self.show_word()
         self.is_change()
 
     # 关键字相似
-    def set_word_soso(self):
+    def set_word_proper(self):
         if self.file_path is None:
             return
-        self.label_list[self.index] = self.soso
+        self.label_list[self.index] = self.proper_word
         self.index_up()
         self.show_word()
         self.is_change()
 
     # 关键字错误
-    def set_word_no(self):
+    def set_word_relevant(self):
         if self.file_path is None:
             return
-        self.label_list[self.index] = self.no
+        self.label_list[self.index] = self.relevant_word
+        self.index_up()
+        self.show_word()
+        self.is_change()
+
+    def set_word_error(self):
+        if self.file_path is None:
+            return
+        self.label_list[self.index] = self.error_word
         self.index_up()
         self.show_word()
         self.is_change()

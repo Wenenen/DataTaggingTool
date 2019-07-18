@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>793</width>
+    <width>1057</width>
     <height>777</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>440</y>
+      <x>170</x>
+      <y>480</y>
       <width>704</width>
       <height>232</height>
      </rect>
@@ -83,8 +83,8 @@
    <widget class="QLabel" name="keyword">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>250</y>
+      <x>400</x>
+      <y>270</y>
       <width>281</width>
       <height>51</height>
      </rect>
@@ -101,7 +101,7 @@
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>770</x>
       <y>50</y>
       <width>220</width>
       <height>61</height>
@@ -128,7 +128,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>0</string>
        </property>
       </widget>
      </item>
@@ -138,14 +138,14 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>340</y>
-      <width>702</width>
+      <y>380</y>
+      <width>984</width>
       <height>85</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="yes_btn">
+      <widget class="QPushButton" name="currency_btn">
        <property name="baseSize">
         <size>
          <width>0</width>
@@ -154,11 +154,11 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>30</pointsize>
+         <pointsize>25</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>正确(1)</string>
+        <string>通用词(1)</string>
        </property>
        <property name="iconSize">
         <size>
@@ -169,26 +169,38 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="soso_btn">
+      <widget class="QPushButton" name="proper_btn">
        <property name="font">
         <font>
-         <pointsize>30</pointsize>
+         <pointsize>25</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>相似(2)</string>
+        <string>专有词(2)</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="no_btn">
+      <widget class="QPushButton" name="relevant_btn">
        <property name="font">
         <font>
-         <pointsize>30</pointsize>
+         <pointsize>25</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>错误(3)</string>
+        <string>关联词(3)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="error_btn">
+       <property name="font">
+        <font>
+         <pointsize>25</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>错误(4)</string>
        </property>
       </widget>
      </item>
@@ -197,8 +209,8 @@
    <widget class="QLabel" name="backLabel">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>140</y>
+      <x>310</x>
+      <y>150</y>
       <width>491</width>
       <height>71</height>
      </rect>
@@ -218,7 +230,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>793</width>
+     <width>1057</width>
      <height>26</height>
     </rect>
    </property>
@@ -228,14 +240,14 @@
  <resources/>
  <connections>
   <connection>
-   <sender>no_btn</sender>
+   <sender>relevant_btn</sender>
    <signal>clicked()</signal>
    <receiver>mainWindow</receiver>
-   <slot>set_word_no()</slot>
+   <slot>set_word_relevant()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>646</x>
-     <y>368</y>
+     <x>785</x>
+     <y>451</y>
     </hint>
     <hint type="destinationlabel">
      <x>152</x>
@@ -250,44 +262,44 @@
    <slot>selectTxtFilePath()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
-     <y>597</y>
+     <x>425</x>
+     <y>678</y>
     </hint>
     <hint type="destinationlabel">
      <x>177</x>
-     <y>-4</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>soso_btn</sender>
+   <sender>proper_btn</sender>
    <signal>clicked()</signal>
    <receiver>mainWindow</receiver>
-   <slot>set_word_soso()</slot>
+   <slot>set_word_proper()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>416</x>
-     <y>350</y>
+     <x>538</x>
+     <y>433</y>
     </hint>
     <hint type="destinationlabel">
      <x>255</x>
-     <y>-11</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>yes_btn</sender>
+   <sender>currency_btn</sender>
    <signal>clicked()</signal>
    <receiver>mainWindow</receiver>
-   <slot>set_word_yes()</slot>
+   <slot>set_word_currency()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>181</x>
-     <y>339</y>
+     <x>182</x>
+     <y>423</y>
     </hint>
     <hint type="destinationlabel">
      <x>206</x>
-     <y>-1</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -298,12 +310,12 @@
    <slot>up_word()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>319</x>
-     <y>425</y>
+     <x>440</x>
+     <y>522</y>
     </hint>
     <hint type="destinationlabel">
      <x>350</x>
-     <y>-16</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -314,22 +326,39 @@
    <slot>save_word()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>583</x>
-     <y>478</y>
+     <x>704</x>
+     <y>633</y>
     </hint>
     <hint type="destinationlabel">
      <x>537</x>
-     <y>-11</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>error_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>set_word_error()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>987</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>925</x>
+     <y>-5</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>set_word_no()</slot>
+  <slot>set_word_relevant()</slot>
   <slot>selectTxtFilePath()</slot>
-  <slot>set_word_soso()</slot>
-  <slot>set_word_yes()</slot>
+  <slot>set_word_proper()</slot>
+  <slot>set_word_currency()</slot>
   <slot>up_word()</slot>
   <slot>save_word()</slot>
+  <slot>set_word_error()</slot>
  </slots>
 </ui>
