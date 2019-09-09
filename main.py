@@ -137,17 +137,18 @@ class mywindow(QtWidgets.QMainWindow, form.Ui_mainWindow):
                 pass
             else:
                 return
-        self.file_name = None
-        self.file_path = None
-        self.word_list.clear()
-        self.label_list.clear()
+        # self.file_name = None
+        # self.file_path = None
+        # self.word_list.clear()
+        # self.label_list.clear()
         self.is_save = True
-        self.index = 0
         self.file_path = QFileDialog.getOpenFileName(self, 'Open file', os.getcwd())
         if self.file_path[0]:  # 如果有这个文件
             self.cause_name.setText(os.path.split(self.file_path[0])[1])
             self.save_file_name = self.file_path[0]+"_label"
-
+            self.index = 0
+            self.word_list.clear()
+            self.label_list.clear()
             with open(self.file_path[0], "r", encoding='utf-8') as txtFile:
                 lines = txtFile.readlines()
                 for line in lines:
